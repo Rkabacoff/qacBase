@@ -1,0 +1,74 @@
+title: qacBase
+url: http://rkabacoff.github.io/qacBase
+template:
+  params:
+    bootswatch: cerulean
+reference:
+  - title: Main Functions
+    desc: ~
+    contents:
+      - '`barcharts`'
+      - '`contents`'
+      - '`cor_plot`'
+      - '`crosstab`'
+      - '`densities`'
+      - '`df_plot`'
+      - '`groupdiff`'
+      - '`histograms`'
+      - '`normalize`'
+      - '`recodes`'
+      - '`scatter`'
+      - '`standardize`'
+      - '`tab`'
+      - '`univariate_plot`'
+      - '`qstats`'
+  - title: Utilities
+    desc: ~
+    contents:
+      - '`clear`'
+      - '`lso`'
+      - '`phelp`'
+      - '`print.contents`'
+      - '`print.crosstab`'
+      - '`print.tab`'
+      - '`plot.crosstab`'
+      - '`plot.tab`'
+      - '`rcolors`'
+      - '`skewness`'
+  - title: Datasets
+    desc: ~
+    contents:
+      - '`cardata`'
+      - '`cars74`'
+      - '`tv`'
+navbar:
+  type: inverse
+  left:
+    - icon: fa-home
+      href: index.html
+  right:
+    - text: Getting Started
+      icon: fas fa-chalkboard-teacher
+      href: articles/qacBase.html
+    - text: "Vignettes"
+      icon: fas fa-book
+      menu:
+      -  text: Exploring a data set
+         href: articles/contents.html
+      -  text: Recoding variables
+         href: articles/recodes.html
+      -  text: Creating frequency tables
+         href: articles/tab.html
+      -  text: Creating two-way frequency tables
+         href: articles/crosstab.html
+      -  text: Descriptive statistics by group
+         href: articles/qstats.html
+    - icon: fa-file-code-o
+      text: "Documentation"
+      href: reference/index.html
+    - icon: fa-newspaper-o
+      text: "News"
+      href: news/index.html
+    - icon: fa-github fa-lg
+      text: "GitHub"
+      href: https://github.com/rkabacoff/qacBase/
