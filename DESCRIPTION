@@ -1,6 +1,6 @@
-Package: qacEDA
+Package: qacBase
 Title: Functions to Facilitate Exploratory Data Analysis
-Version: 1.0.0.0
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Kabacoff",
            family = "Robert",
@@ -43,8 +43,8 @@ LazyData: true
 RoxygenNote: 7.1.2
 License: MIT + file LICENSE
 VignetteBuilder: knitr
-BugReports: https://github.com/rkabacoff/qacEDA/issues
-URL: https://github.com/rkabacoff/qacEDA
+BugReports: https://github.com/rkabacoff/qacBase/issues
+URL: https://github.com/rkabacoff/qacBase
 Suggests:
     rmarkdown,
     knitr,
