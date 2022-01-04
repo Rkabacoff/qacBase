@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">qacBase</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -93,7 +95,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/rkabacoff/qacBase/">
+  <a href="https://github.com/rkabacoff/qacBase/" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -109,31 +111,31 @@
 
       
 
-      </header><script src="qstats_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Descriptive statistics by group</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/master/vignettes/qstats.Rmd"><code>vignettes/qstats.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/HEAD/vignettes/qstats.Rmd" class="external-link"><code>vignettes/qstats.Rmd</code></a></small>
       <div class="hidden name"><code>qstats.Rmd</code></div>
 
     </div>
 
     
     
-<div id="overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
 <p>Getting summary statistics for a quantitative variable is a very common task in data analysis. Unfortunately, <strong>R</strong> makes it surprisingly difficult.</p>
 <p>The <code>qstats</code> function is an attempt to rectify the situation by making it simple to get any number of descriptive statistics for a numeric variable and to break these statistics down by the levels of one or more categorical variables (groups).</p>
 <p>The general format is</p>
 <p><strong><code>qstats(data, variable, grouping variables, statistics, other options)</code></strong></p>
 <p>Note that variable names do not have to be quoted.</p>
 </div>
-<div id="using-default-statistics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#using-default-statistics" class="anchor"></a>Using default statistics</h2>
+<div class="section level2">
+<h2 id="using-default-statistics">Using default statistics<a class="anchor" aria-label="anchor" href="#using-default-statistics"></a>
+</h2>
 <p>By default the <em>sample size</em>, <em>mean</em>, and <em>standard deviation</em> are provided. Let’s take a look at fuel efficiencies for 11,914 automobiles in the <code>cardata</code> data frame.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># simple summary statistics </span>
@@ -164,9 +166,9 @@
 <span class="co">#&gt; 11      Midsize front wheel drive 1907 30.24  9.46</span>
 <span class="co">#&gt; 12      Midsize  rear wheel drive  938 23.32  5.16</span></code></pre></div>
 </div>
-<div id="specifying-other-statistics" class="section level2">
-<h2 class="hasAnchor">
-<a href="#specifying-other-statistics" class="anchor"></a>Specifying other statistics</h2>
+<div class="section level2">
+<h2 id="specifying-other-statistics">Specifying other statistics<a class="anchor" aria-label="anchor" href="#specifying-other-statistics"></a>
+</h2>
 <p>You can supply a statistics argument with the “stats” parameter. You can pass a single statistic, or multiple statistics as a vector of names.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># single statistic</span>
@@ -178,7 +180,7 @@
 
 <span class="co"># multiple statistics</span>
 <span class="fu"><a href="../reference/qstats.html">qstats</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">highway_mpg</span>, <span class="va">vehicle_size</span>, 
-       stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"median"</span>, <span class="st">"min"</span>, <span class="st">"max"</span><span class="op">)</span><span class="op">)</span>
+       stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"median"</span>, <span class="st">"min"</span>, <span class="st">"max"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;   vehicle_size median min max</span>
 <span class="co">#&gt; 1      Compact     28  12 111</span>
 <span class="co">#&gt; 2        Large     22  13 107</span>
@@ -186,20 +188,20 @@
 <p>User-defined functions can also be used as a statistics. The only requirement is that the function returns a single number.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#custom statistics</span>
-<span class="va">p25</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">x</span>, probs<span class="op">=</span><span class="fl">.25</span><span class="op">)</span>
-<span class="va">p75</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">x</span>, probs<span class="op">=</span><span class="fl">.75</span><span class="op">)</span>
+<span class="va">p25</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">x</span>, probs<span class="op">=</span><span class="fl">.25</span><span class="op">)</span>
+<span class="va">p75</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">x</span>, probs<span class="op">=</span><span class="fl">.75</span><span class="op">)</span>
 
 <span class="co">#calling the built in and custom statistics</span>
 <span class="fu"><a href="../reference/qstats.html">qstats</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">highway_mpg</span>, <span class="va">vehicle_size</span>, 
-       stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"min"</span>, <span class="st">"p25"</span>, <span class="st">"p75"</span>, <span class="st">"max"</span><span class="op">)</span><span class="op">)</span>
+       stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"min"</span>, <span class="st">"p25"</span>, <span class="st">"p75"</span>, <span class="st">"max"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;   vehicle_size min p25 p75 max</span>
 <span class="co">#&gt; 1      Compact  12  24  33 111</span>
 <span class="co">#&gt; 2        Large  13  19  25 107</span>
 <span class="co">#&gt; 3      Midsize  12  23  31 354</span></code></pre></div>
 </div>
-<div id="other-options" class="section level2">
-<h2 class="hasAnchor">
-<a href="#other-options" class="anchor"></a>Other options</h2>
+<div class="section level2">
+<h2 id="other-options">Other options<a class="anchor" aria-label="anchor" href="#other-options"></a>
+</h2>
 <p>Other options include</p>
 <ul>
 <li>
@@ -210,7 +212,7 @@
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qstats.html">qstats</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">highway_mpg</span>, <span class="va">vehicle_size</span>,  
-       stats<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"n"</span>, <span class="st">"mean"</span>,<span class="st">"median"</span>,<span class="st">"sd"</span><span class="op">)</span>,  
+       stats<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"n"</span>, <span class="st">"mean"</span>,<span class="st">"median"</span>,<span class="st">"sd"</span><span class="op">)</span>,  
        na.rm<span class="op">=</span><span class="cn">FALSE</span>, digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
 <span class="co">#&gt;   vehicle_size    n  mean median   sd</span>
 <span class="co">#&gt; 1      Compact 4764 28.94     28 9.58</span>
@@ -230,11 +232,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Kabacoff Robert.</p>
+  <p></p>
+<p>Developed by Kabacoff Robert.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -242,6 +246,8 @@
 
   
 
+
+  
 
   </body>
 </html>

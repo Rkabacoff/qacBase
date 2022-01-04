@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">qacBase</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -93,7 +95,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/rkabacoff/qacBase/">
+  <a href="https://github.com/rkabacoff/qacBase/" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -109,14 +111,14 @@
 
       
 
-      </header><script src="recodes_files/header-attrs-2.10/header-attrs.js"></script><script src="recodes_files/kePrint-0.0.1/kePrint.js"></script><link href="recodes_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+      </header><script src="recodes_files/kePrint-0.0.1/kePrint.js"></script><link href="recodes_files/lightable-0.0.1/lightable.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Recoding Variables</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/master/vignettes/recodes.Rmd"><code>vignettes/recodes.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/HEAD/vignettes/recodes.Rmd" class="external-link"><code>vignettes/recodes.Rmd</code></a></small>
       <div class="hidden name"><code>recodes.Rmd</code></div>
 
     </div>
@@ -125,11 +127,11 @@
     
 <p>The <code><a href="../reference/recodes.html">recodes()</a></code> functions makes it very easy to recode one or more variables in the your data frame. The format is </p>
 <p><strong><code>newdata &lt;- recodes(olddata, variables, from values, to values)</code></strong></p>
-<div id="original-dataset" class="section level3">
-<h3 class="hasAnchor">
-<a href="#original-dataset" class="anchor"></a>Original dataset</h3>
+<div class="section level3">
+<h3 id="original-dataset">Original dataset<a class="anchor" aria-label="anchor" href="#original-dataset"></a>
+</h3>
 <p>Consider the following data set (below). Lets make the following changes.</p>
-<table class="table table table-striped">
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:right;">
 sex
@@ -294,14 +296,14 @@ worse
 </tr>
 </tbody>
 </table>
-<div id="sex" class="section level4">
-<h4 class="hasAnchor">
-<a href="#sex" class="anchor"></a>sex</h4>
+<div class="section level4">
+<h4 id="sex">sex<a class="anchor" aria-label="anchor" href="#sex"></a>
+</h4>
 <p>For <code>sex</code>, set 1 to “Male” and 2 to “Female”.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"sex"</span>, 
-               from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span>, <span class="st">"Female"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<table class="table table table-striped">
+               from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Male"</span>, <span class="st">"Female"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
 sex
@@ -467,15 +469,15 @@ worse
 </tbody>
 </table>
 </div>
-<div id="race" class="section level4">
-<h4 class="hasAnchor">
-<a href="#race" class="anchor"></a>race</h4>
+<div class="section level4">
+<h4 id="race">race<a class="anchor" aria-label="anchor" href="#race"></a>
+</h4>
 <p>Recode <code>race</code> to “White” vs. “Other”.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"race"</span>, 
-              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"w"</span>, <span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"h"</span><span class="op">)</span>, 
-              to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"White"</span>, <span class="st">"Other"</span>, <span class="st">"Other"</span>, <span class="st">"Other"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<table class="table table table-striped">
+              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"w"</span>, <span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"h"</span><span class="op">)</span>, 
+              to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"White"</span>, <span class="st">"Other"</span>, <span class="st">"Other"</span>, <span class="st">"Other"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
 sex
@@ -641,15 +643,15 @@ worse
 </tbody>
 </table>
 </div>
-<div id="outcome" class="section level4">
-<h4 class="hasAnchor">
-<a href="#outcome" class="anchor"></a>outcome</h4>
+<div class="section level4">
+<h4 id="outcome">outcome<a class="anchor" aria-label="anchor" href="#outcome"></a>
+</h4>
 <p>Recode <code>outcome</code> to 1 (better) vs. 0 (not better).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"outcome"</span>, 
-              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"better"</span>, <span class="st">"same"</span>, <span class="st">"worse"</span><span class="op">)</span>, 
-              to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<table class="table table table-striped">
+              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"better"</span>, <span class="st">"same"</span>, <span class="st">"worse"</span><span class="op">)</span>, 
+              to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
 sex
@@ -815,15 +817,15 @@ Other
 </tbody>
 </table>
 </div>
-<div id="q1-and-q2" class="section level4">
-<h4 class="hasAnchor">
-<a href="#q1-and-q2" class="anchor"></a>Q1 and Q2</h4>
+<div class="section level4">
+<h4 id="q1-and-q2">Q1 and Q2<a class="anchor" aria-label="anchor" href="#q1-and-q2"></a>
+</h4>
 <p>For <code>Q1</code> and <code>Q2</code> set values of 86 and 99 to missing.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Q1"</span>, <span class="st">"Q2"</span><span class="op">)</span>, 
-              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">86</span>, <span class="fl">99</span><span class="op">)</span>, to<span class="op">=</span><span class="cn">NA</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Q1"</span>, <span class="st">"Q2"</span><span class="op">)</span>, 
+              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">86</span>, <span class="fl">99</span><span class="op">)</span>, to<span class="op">=</span><span class="cn">NA</span><span class="op">)</span>
 <span class="co">#&gt; Note: 'from' is longer than 'to', so 'to' was recycled.</span></code></pre></div>
-<table class="table table table-striped">
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
 sex
@@ -989,9 +991,9 @@ NA
 </tbody>
 </table>
 </div>
-<div id="age" class="section level4">
-<h4 class="hasAnchor">
-<a href="#age" class="anchor"></a>age</h4>
+<div class="section level4">
+<h4 id="age">age<a class="anchor" aria-label="anchor" href="#age"></a>
+</h4>
 <p>For <code>age</code>, set values</p>
 <ul>
 <li>less than 20 or greater than 90 to missing,</li>
@@ -1004,18 +1006,18 @@ NA
 <p>You can use expressions in your <code>from</code> fields. When they are <code>TRUE</code>, the corresponding <code>to</code> values will be applied. We will use the dollar sign (<strong>$</strong>) to represent the variable (age in this case). The symbols ( <strong>|</strong>, <strong>&amp;</strong> ) mean <strong>OR</strong> and <strong>AND</strong> respectively.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"age"</span>, 
-              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"$ &lt;   20 | $ &gt;  90"</span>, 
+              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"$ &lt;   20 | $ &gt;  90"</span>, 
                      <span class="st">"$ &gt;=  20 &amp; $ &lt;= 30"</span>,
                      <span class="st">"$ &gt;   30 &amp; $ &lt;= 50"</span>,
                      <span class="st">"$ &gt;   50 &amp; $ &lt;= 90"</span><span class="op">)</span>, 
-              to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Younger"</span>, <span class="st">"Middle Aged"</span>, <span class="st">"Older"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+              to<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Younger"</span>, <span class="st">"Middle Aged"</span>, <span class="st">"Older"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>We can also write this as</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"age"</span>, 
-              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"$ &lt; 20"</span>, <span class="st">"$ &lt;= 30"</span>, <span class="st">"$ &lt;= 50"</span>, <span class="st">"$ &lt;= 90"</span>, <span class="st">"$ &gt; 90"</span><span class="op">)</span>, 
-              to<span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Younger"</span>, <span class="st">"Middle Aged"</span>, <span class="st">"Older"</span>, <span class="st">"NA"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+              from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"$ &lt; 20"</span>, <span class="st">"$ &lt;= 30"</span>, <span class="st">"$ &lt;= 50"</span>, <span class="st">"$ &lt;= 90"</span>, <span class="st">"$ &gt; 90"</span><span class="op">)</span>, 
+              to<span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Younger"</span>, <span class="st">"Middle Aged"</span>, <span class="st">"Older"</span>, <span class="st">"NA"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>This works because once the age value for an observations meets a criteria that is <code>TRUE</code> (working left to right), it is recoded. It isn’t changed again by later criteria in the same <code>recodes</code> statement.</p>
-<table class="table table table-striped">
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
 sex
@@ -1181,13 +1183,13 @@ NA
 </tbody>
 </table>
 </div>
-<div id="rating" class="section level4">
-<h4 class="hasAnchor">
-<a href="#rating" class="anchor"></a>rating</h4>
+<div class="section level4">
+<h4 id="rating">rating<a class="anchor" aria-label="anchor" href="#rating"></a>
+</h4>
 <p>Finally, for the <code>rating</code> variable, reverse the scoring so that 1 to 5 becomes 5 to 1.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"rating"</span>, from<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, to<span class="op">=</span><span class="fl">5</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
-<table class="table table table-striped">
+<table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
 sex
@@ -1354,9 +1356,9 @@ NA
 </table>
 </div>
 </div>
-<div id="note" class="section level3">
-<h3 class="hasAnchor">
-<a href="#note" class="anchor"></a>Note</h3>
+<div class="section level3">
+<h3 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a>
+</h3>
 <p>Remember that <code>recodes</code> returns a data frame, not a variable.</p>
 <ul>
 <li><p><code>df &lt;- recodes(data=df, vars="rating", from=1:5, to=5:1)</code> <strong>is correct</strong>.</p></li>
@@ -1376,11 +1378,13 @@ NA
 
 
       <footer><div class="copyright">
-  <p>Developed by Kabacoff Robert.</p>
+  <p></p>
+<p>Developed by Kabacoff Robert.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -1388,6 +1392,8 @@ NA
 
   
 
+
+  
 
   </body>
 </html>

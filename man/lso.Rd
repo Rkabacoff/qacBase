@@ -43,7 +43,7 @@ data(cars74)
 lso()
 }
 \references{
-\url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}.
+\url{https://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session/}.
 }
 \author{
 Based on based on postings by Petr Pikal and David Hinds to the r-help list in 2004 and

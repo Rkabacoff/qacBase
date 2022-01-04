@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://rkabacoff.github.io/qacBase/404.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/contents.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/crosstab.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/qacBase.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/qstats.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/recodes.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/articles/tab.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/authors.html</loc>
+  </url>
+  <url>
     <loc>http://rkabacoff.github.io/qacBase/index.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>http://rkabacoff.github.io/qacBase/news/index.html</loc>
   </url>
   <url>
     <loc>http://rkabacoff.github.io/qacBase/reference/barcharts.html</loc>
@@ -37,6 +73,9 @@
     <loc>http://rkabacoff.github.io/qacBase/reference/histograms.html</loc>
   </url>
   <url>
+    <loc>http://rkabacoff.github.io/qacBase/reference/index.html</loc>
+  </url>
+  <url>
     <loc>http://rkabacoff.github.io/qacBase/reference/lso.html</loc>
   </url>
   <url>
@@ -64,6 +103,9 @@
     <loc>http://rkabacoff.github.io/qacBase/reference/qacBase-package.html</loc>
   </url>
   <url>
+    <loc>http://rkabacoff.github.io/qacBase/reference/qacEDA-package.html</loc>
+  </url>
+  <url>
     <loc>http://rkabacoff.github.io/qacBase/reference/qstats.html</loc>
   </url>
   <url>
@@ -89,23 +131,5 @@
   </url>
   <url>
     <loc>http://rkabacoff.github.io/qacBase/reference/univariate_plot.html</loc>
-  </url>
-  <url>
-    <loc>http://rkabacoff.github.io/qacBase/articles/contents.html</loc>
-  </url>
-  <url>
-    <loc>http://rkabacoff.github.io/qacBase/articles/crosstab.html</loc>
-  </url>
-  <url>
-    <loc>http://rkabacoff.github.io/qacBase/articles/qacBase.html</loc>
-  </url>
-  <url>
-    <loc>http://rkabacoff.github.io/qacBase/articles/qstats.html</loc>
-  </url>
-  <url>
-    <loc>http://rkabacoff.github.io/qacBase/articles/recodes.html</loc>
-  </url>
-  <url>
-    <loc>http://rkabacoff.github.io/qacBase/articles/tab.html</loc>
   </url>
 </urlset>

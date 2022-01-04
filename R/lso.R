@@ -20,7 +20,7 @@
 #' @author
 #' Based on based on postings by Petr Pikal and David Hinds to the r-help list in 2004 and
 #' modified Dirk Eddelbuettel, Patrick McCann, and Rob Kabacoff.
-#' @references \url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}.
+#' @references \url{https://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session/}.
 #' @examples
 #' data(cardata)
 #' data(cars74)

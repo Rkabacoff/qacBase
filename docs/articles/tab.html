@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">qacBase</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -93,7 +95,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/rkabacoff/qacBase/">
+  <a href="https://github.com/rkabacoff/qacBase/" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -109,13 +111,13 @@
 
       
 
-      </header><script src="tab_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Frequency tables</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/master/vignettes/tab.Rmd"><code>vignettes/tab.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/HEAD/vignettes/tab.Rmd" class="external-link"><code>vignettes/tab.Rmd</code></a></small>
       <div class="hidden name"><code>tab.Rmd</code></div>
 
     </div>
@@ -123,9 +125,9 @@
     
     
 <p>The <code>tab</code> function provides a frequency table for a categorical variable. Many options are available.</p>
-<div id="creating-a-frequency-table" class="section level3">
-<h3 class="hasAnchor">
-<a href="#creating-a-frequency-table" class="anchor"></a>Creating a frequency table</h3>
+<div class="section level3">
+<h3 id="creating-a-frequency-table">Creating a frequency table<a class="anchor" aria-label="anchor" href="#creating-a-frequency-table"></a>
+</h3>
 <p>The <strong>cardata</strong> data frame contains information on 11,914 vehicles, including make, model, and features and price. First, let’s tabulate the number of automobiles by drive type.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tab.html">tab</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">driven_wheels</span><span class="op">)</span>
@@ -144,9 +146,9 @@
 <span class="co">#&gt;   rear wheel drive  3371  28.29%</span>
 <span class="co">#&gt;              Total 11914    100%</span></code></pre></div>
 </div>
-<div id="sorting-by-category" class="section level3">
-<h3 class="hasAnchor">
-<a href="#sorting-by-category" class="anchor"></a>Sorting by category</h3>
+<div class="section level3">
+<h3 id="sorting-by-category">Sorting by category<a class="anchor" aria-label="anchor" href="#sorting-by-category"></a>
+</h3>
 <p>Next, we’ll tabulate the cars by driven_wheels and <strong>sort the results</strong> in descending order.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tab.html">tab</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">driven_wheels</span>, total<span class="op">=</span><span class="cn">TRUE</span>, sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
@@ -157,9 +159,9 @@
 <span class="co">#&gt;   four wheel drive  1403  11.78%</span>
 <span class="co">#&gt;              Total 11914    100%</span></code></pre></div>
 </div>
-<div id="collapsing-categories" class="section level3">
-<h3 class="hasAnchor">
-<a href="#collapsing-categories" class="anchor"></a>Collapsing categories</h3>
+<div class="section level3">
+<h3 id="collapsing-categories">Collapsing categories<a class="anchor" aria-label="anchor" href="#collapsing-categories"></a>
+</h3>
 <p>Next, let’s tabulate the automobiles by make, sorting from largest number to smallest number. We’ll also remove all missing observations from the data set, add a total row, and limit the makes to the <strong>10 most frequent</strong>, plus an “Other” category.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tab.html">tab</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">make</span>, sort <span class="op">=</span> <span class="cn">TRUE</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span>, total <span class="op">=</span> <span class="cn">TRUE</span>, maxcat<span class="op">=</span><span class="fl">10</span><span class="op">)</span>
@@ -187,9 +189,9 @@
 <span class="co">#&gt;  Volkswagen  809   6.79%</span>
 <span class="co">#&gt;       Other 7729  64.87%</span></code></pre></div>
 </div>
-<div id="graphing-frequency-tables" class="section level3">
-<h3 class="hasAnchor">
-<a href="#graphing-frequency-tables" class="anchor"></a>Graphing frequency tables</h3>
+<div class="section level3">
+<h3 id="graphing-frequency-tables">Graphing frequency tables<a class="anchor" aria-label="anchor" href="#graphing-frequency-tables"></a>
+</h3>
 <p>Frequency tables are usually represented by bar charts. The  function can output frequency plots, and cumulative frequency plots.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tab.html">tab</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">vehicle_style</span>,  sort<span class="op">=</span><span class="cn">TRUE</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
@@ -210,11 +212,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Kabacoff Robert.</p>
+  <p></p>
+<p>Developed by Kabacoff Robert.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -222,6 +226,8 @@
 
   
 
+
+  
 
   </body>
 </html>

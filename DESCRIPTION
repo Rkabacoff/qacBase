@@ -1,6 +1,6 @@
 Package: qacBase
 Title: Functions to Facilitate Exploratory Data Analysis
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     c(person(given = "Kabacoff",
            family = "Robert",
@@ -35,7 +35,7 @@ Authors@R:
     person("Tuhabonye", "Emma", role = "ctb"),
     person("Wong", "Phillip", role = "ctb")
     )
-Description: This package provides functions for descriptive statistics,
+Description: Functions for descriptive statistics,
   data management, and data visualization.
 Depends: R (>= 3.5.0)
 Encoding: UTF-8

@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">qacBase</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -93,7 +95,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/rkabacoff/qacBase/">
+  <a href="https://github.com/rkabacoff/qacBase/" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -109,13 +111,13 @@
 
       
 
-      </header><script src="contents_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Exploring a data frame</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/master/vignettes/contents.Rmd"><code>vignettes/contents.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/HEAD/vignettes/contents.Rmd" class="external-link"><code>vignettes/contents.Rmd</code></a></small>
       <div class="hidden name"><code>contents.Rmd</code></div>
 
     </div>
@@ -123,22 +125,21 @@
     
     
 <p>The purpose of the <strong>qacBase</strong> package is to provide functions for descriptive statistics, data management, and data visualization. As a part of this package, the <strong>contents</strong> function produces a series of informational tables that allow for users to have a comprehensive understanding of their dataset of choice as well as the each of the quantitative and categorical variables featured in their dataset. Graphical functions, such as <strong>barcharts</strong>, <strong>histograms</strong>, and <strong>densities</strong> provide succinct visualizations of the variables in a data frame.</p>
-<div id="example-dataset-motor-trend-magazine-review-of-cars" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example-dataset-motor-trend-magazine-review-of-cars" class="anchor"></a>Example Dataset: Motor Trend Magazine Review of Cars</h2>
+<div class="section level2">
+<h2 id="example-dataset-motor-trend-magazine-review-of-cars">Example Dataset: Motor Trend Magazine Review of Cars<a class="anchor" aria-label="anchor" href="#example-dataset-motor-trend-magazine-review-of-cars"></a>
+</h2>
 <p>How can you quickly become familiar with the data in a data frame? We’ll use the <strong>cars74</strong> data frame as an example. This data frame contains information on the characteristics of 32 cars in 1974.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
-<div id="data-description-with-contents" class="section level3">
-<h3 class="hasAnchor">
-<a href="#data-description-with-contents" class="anchor"></a>Data description with <code>contents()</code>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
+<div class="section level3">
+<h3 id="data-description-with-contents">Data description with <code>contents()</code><a class="anchor" aria-label="anchor" href="#data-description-with-contents"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/contents.html">contents</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; The data frame cars74 has 32 observations and 12 variables.</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Overall</span>
+<span class="co">#&gt; <span style="color: #0000BB; font-weight: bold; text-decoration: underline;">Overall</span></span>
 <span class="co">#&gt;  pos varname type      n_unique n_miss pct_miss</span>
 <span class="co">#&gt;   1  auto    character 32       0      0%      </span>
 <span class="co">#&gt;   2  mpg     numeric   25       0      0%      </span>
@@ -153,7 +154,7 @@
 <span class="co">#&gt;  11  gear    ordered    3       0      0%      </span>
 <span class="co">#&gt;  12  carb    ordered    6       0      0%      </span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Numeric Variables</span>
+<span class="co">#&gt; <span style="color: #0000BB; font-weight: bold; text-decoration: underline;">Numeric Variables</span></span>
 <span class="co">#&gt;       n   mean     sd skew   min    p25 median    p75    max</span>
 <span class="co">#&gt; mpg  32  20.09   6.03 0.61 10.40  15.43  19.20  22.80  33.90</span>
 <span class="co">#&gt; disp 32 230.72 123.94 0.38 71.10 120.83 196.30 326.00 472.00</span>
@@ -162,7 +163,7 @@
 <span class="co">#&gt; wt   32   3.22   0.98 0.42  1.51   2.58   3.33   3.61   5.42</span>
 <span class="co">#&gt; qsec 32  17.85   1.79 0.37 14.50  16.89  17.71  18.90  22.90</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Categorical Variables</span>
+<span class="co">#&gt; <span style="color: #0000BB; font-weight: bold; text-decoration: underline;">Categorical Variables</span></span>
 <span class="co">#&gt;  variable level              n  pct </span>
 <span class="co">#&gt;  auto     AMC Javelin         1 0.03</span>
 <span class="co">#&gt;           Cadillac Fleetwood  1 0.03</span>
@@ -197,17 +198,17 @@
 <p>The <strong>categorical table</strong> provides information for each of the categorical variables in the data frame, listing the variable name, the specific levels of each variable, and the number of observations for each level, and percentage distribution of each variable level. By default, up to 10 levels of a categorical variable are displayed (but you can increase this by adding the option maxcat = #, where # is the number of levels to display).</p>
 <p>If the dataset only contains quantitative or categorical, then only the overall summary table and the relevant variable table would be printed.</p>
 </div>
-<div id="visualizing-the-data-frame" class="section level3">
-<h3 class="hasAnchor">
-<a href="#visualizing-the-data-frame" class="anchor"></a>Visualizing the data frame</h3>
+<div class="section level3">
+<h3 id="visualizing-the-data-frame">Visualizing the data frame<a class="anchor" aria-label="anchor" href="#visualizing-the-data-frame"></a>
+</h3>
 <p>The <code>df_plot</code> function provides a single graph displaying the variables, their types, and the percent of values present (or missing).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/df_plot.html">df_plot</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
 <p><img src="contents_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
-<div id="visualizing-the-categorical-variables" class="section level3">
-<h3 class="hasAnchor">
-<a href="#visualizing-the-categorical-variables" class="anchor"></a>Visualizing the categorical variables</h3>
+<div class="section level3">
+<h3 id="visualizing-the-categorical-variables">Visualizing the categorical variables<a class="anchor" aria-label="anchor" href="#visualizing-the-categorical-variables"></a>
+</h3>
 <p>The <code>barcharts</code> function plots the distribution of each of the categorical variables in the data frame.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/barcharts.html">barcharts</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span>
@@ -215,9 +216,9 @@
 <span class="co">#&gt;  auto</span></code></pre></div>
 <p><img src="contents_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 </div>
-<div id="visualizing-the-quantitative-variables" class="section level3">
-<h3 class="hasAnchor">
-<a href="#visualizing-the-quantitative-variables" class="anchor"></a>Visualizing the quantitative variables</h3>
+<div class="section level3">
+<h3 id="visualizing-the-quantitative-variables">Visualizing the quantitative variables<a class="anchor" aria-label="anchor" href="#visualizing-the-quantitative-variables"></a>
+</h3>
 <p>The <code>histograms</code> and <code>densities</code> functions plot the distribution of each of the quantitative variables in the data frame.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/histograms.html">histograms</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
@@ -241,11 +242,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Kabacoff Robert.</p>
+  <p></p>
+<p>Developed by Kabacoff Robert.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -253,6 +256,8 @@
 
   
 
+
+  
 
   </body>
 </html>

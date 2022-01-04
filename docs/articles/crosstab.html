@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">qacBase</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
       </span>
     </div>
 
@@ -93,7 +95,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/rkabacoff/qacBase/">
+  <a href="https://github.com/rkabacoff/qacBase/" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
     GitHub
@@ -109,13 +111,13 @@
 
       
 
-      </header><script src="crosstab_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Creating two-way frequency tables</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/master/vignettes/crosstab.Rmd"><code>vignettes/crosstab.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkabacoff/qacBase/blob/HEAD/vignettes/crosstab.Rmd" class="external-link"><code>vignettes/crosstab.Rmd</code></a></small>
       <div class="hidden name"><code>crosstab.Rmd</code></div>
 
     </div>
@@ -136,9 +138,9 @@
 </ul>
 <p>Tables are printed with 2 decimal places for percents (modifiable using <code>digits=#</code>). Variables are coerced to factors if necessary. Adding <code>plot=TRUE</code> produces a <code>ggplot2</code> graph instead of a table.</p>
 <p>In the examples below, the number of car cylinders (<em>cyl</em>) is cross-tabulated with the number of gears (<em>gear</em>) for 32 automobiles in the <em>cars74</em> data frame.</p>
-<div id="frequencies" class="section level3">
-<h3 class="hasAnchor">
-<a href="#frequencies" class="anchor"></a>Frequencies</h3>
+<div class="section level3">
+<h3 id="frequencies">Frequencies<a class="anchor" aria-label="anchor" href="#frequencies"></a>
+</h3>
 <p>By default, the crosstab function reports frequency counts for each combination of the two categorical variables. The most common car type has 3 gears and 8 cylinders.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span><span class="op">)</span>
@@ -152,9 +154,9 @@
 <span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="crosstab_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 </div>
-<div id="cell-percents" class="section level3">
-<h3 class="hasAnchor">
-<a href="#cell-percents" class="anchor"></a>Cell percents</h3>
+<div class="section level3">
+<h3 id="cell-percents">Cell percents<a class="anchor" aria-label="anchor" href="#cell-percents"></a>
+</h3>
 <p>Cell percents add up to 100% overall all the cells in the table. 25% of all cars in the data frame have 4 gears and 4 cylinders.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type<span class="op">=</span><span class="st">"percent"</span><span class="op">)</span>
@@ -168,9 +170,9 @@
 <span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type<span class="op">=</span><span class="st">"percent"</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="crosstab_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 </div>
-<div id="row-percents" class="section level3">
-<h3 class="hasAnchor">
-<a href="#row-percents" class="anchor"></a>Row percents</h3>
+<div class="section level3">
+<h3 id="row-percents">Row percents<a class="anchor" aria-label="anchor" href="#row-percents"></a>
+</h3>
 <p>Row percents sum to 100% for each row of the table. 86% of 8 cylinder cars have 3 gears.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type <span class="op">=</span> <span class="st">"rowpercent"</span><span class="op">)</span>
@@ -183,9 +185,9 @@
 <span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type <span class="op">=</span> <span class="st">"rowpercent"</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="crosstab_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
-<div id="column-percents" class="section level3">
-<h3 class="hasAnchor">
-<a href="#column-percents" class="anchor"></a>Column percents</h3>
+<div class="section level3">
+<h3 id="column-percents">Column percents<a class="anchor" aria-label="anchor" href="#column-percents"></a>
+</h3>
 <p>Column percents sum to 100% for each column of the table. Only 7% of 3 gear cars have 4 cylinders.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type <span class="op">=</span> <span class="st">"colpercent"</span><span class="op">)</span>
@@ -199,9 +201,9 @@
 <span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type <span class="op">=</span> <span class="st">"colpercent"</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="crosstab_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 </div>
-<div id="chi-square-test-of-independence" class="section level3">
-<h3 class="hasAnchor">
-<a href="#chi-square-test-of-independence" class="anchor"></a>Chi-square test of independence</h3>
+<div class="section level3">
+<h3 id="chi-square-test-of-independence">Chi-square test of independence<a class="anchor" aria-label="anchor" href="#chi-square-test-of-independence"></a>
+</h3>
 <p>You can include a test that the two categorical variables are independent, by adding the option <code>chisquare = TRUE</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/crosstab.html">crosstab</a></span><span class="op">(</span><span class="va">cars74</span>, <span class="va">cyl</span>, <span class="va">gear</span>, type <span class="op">=</span> <span class="st">"colpercent"</span>, chisquare<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
@@ -229,11 +231,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Kabacoff Robert.</p>
+  <p></p>
+<p>Developed by Kabacoff Robert.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -241,6 +245,8 @@
 
   
 
+
+  
 
   </body>
 </html>

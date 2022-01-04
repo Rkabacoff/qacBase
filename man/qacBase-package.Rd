@@ -6,7 +6,7 @@
 \alias{qacBase-package}
 \title{qacBase: Functions to Facilitate Exploratory Data Analysis}
 \description{
-This package provides functions for descriptive statistics, data management, and data visualization.
+Functions for descriptive statistics, data management, and data visualization.
 }
 \seealso{
 Useful links:
