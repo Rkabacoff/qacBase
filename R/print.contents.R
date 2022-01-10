@@ -3,7 +3,8 @@
 #' \code{print.contents} prints the results of the content function.
 #' @param x a object of class \code{contents}
 #' @param ... not used.
-#' @return NULL
+#' @return 
+#' No return value, called for side effects.
 #'
 #' @examples
 #' testdata <- data.frame(height=c(4, 5, 3, 2, 100),

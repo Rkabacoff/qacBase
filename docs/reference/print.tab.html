@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">qacBase</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.2</span>
       </span>
     </div>
 
@@ -110,13 +110,64 @@
 <dt>...</dt>
 <dd><p>Parameters passed to the print function</p></dd>
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    <p>No return value, called for side effects</p>
+    </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="va">frequency</span> <span class="op">&lt;-</span> <span class="fu"><a href="tab.html">tab</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">make</span>, sort <span class="op">=</span> <span class="cn">TRUE</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">frequency</span> <span class="op">&lt;-</span> <span class="fu"><a href="tab.html">tab</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">make</span>, sort <span class="op">=</span> <span class="cn">TRUE</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">frequency</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          level    n percent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      Chevrolet 1123   9.43%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Ford  881   7.39%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Volkswagen  809   6.79%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Toyota  746   6.26%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Dodge  626   5.25%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Nissan  558   4.68%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            GMC  515   4.32%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Honda  449   3.77%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Mazda  423   3.55%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Cadillac  397   3.33%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Mercedes-Benz  353   2.96%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Suzuki  351   2.95%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            BMW  334    2.8%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Infiniti  330   2.77%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Audi  328   2.75%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Hyundai  303   2.54%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Volvo  281   2.36%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Subaru  256   2.15%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Acura  252   2.12%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Kia  231   1.94%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Mitsubishi  213   1.79%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Lexus  202    1.7%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Buick  196   1.65%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Chrysler  187   1.57%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Pontiac  186   1.56%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Lincoln  164   1.38%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Oldsmobile  150   1.26%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Land Rover  143    1.2%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Porsche  136   1.14%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Saab  111   0.93%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Aston Martin   93   0.78%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Plymouth   82   0.69%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Bentley   74   0.62%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Ferrari   69   0.58%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           FIAT   62   0.52%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Scion   60    0.5%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Maserati   58   0.49%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    Lamborghini   52   0.44%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    Rolls-Royce   31   0.26%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Lotus   29   0.24%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Tesla   18   0.15%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         HUMMER   17   0.14%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Maybach   16   0.13%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Alfa Romeo    5   0.04%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        McLaren    5   0.04%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Bugatti    3   0.03%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Genesis    3   0.03%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Spyker    3   0.03%</span>
 </code></pre></div>
     </div>
   </div>

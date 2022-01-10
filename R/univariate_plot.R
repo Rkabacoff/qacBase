@@ -25,6 +25,7 @@
 #' @param densitycolor fill color for density curve.
 #' @param alpha Alpha transparency (0-1) for the density curve and
 #' jittered points.
+#' @param seed pseudorandom number seed for jittered plot.
 #' @import ggplot2
 #' @import patchwork
 #' @return a ggplot2 graph
@@ -39,7 +40,8 @@ univariate_plot <- function(data, x, bins=30,
                            pointcolor="black",
                            density=TRUE,
                            densitycolor="grey",
-                           alpha=0.2){
+                           alpha=0.2,
+                           seed=1234){
 
   
   if (missing(x)){
@@ -97,7 +99,6 @@ univariate_plot <- function(data, x, bins=30,
   }
 
   df <- data.frame(x=mean, y=0)
-  set.seed(1)
   p2 <- ggplot(data, (aes(x=.data[[x]]))) +
     geom_boxplot(fill=fill) +
     geom_point(data=df,
@@ -113,6 +114,7 @@ univariate_plot <- function(data, x, bins=30,
           panel.grid.minor.y = element_blank())
 
   df <- data.frame(x=data[[x]], y=0)
+  set.seed(seed)
   p3 <- ggplot(df, (aes(x=x, y=.data[["y"]]))) +
     geom_jitter(alpha=alpha, color=pointcolor) +
     scale_x_continuous(limits=c(minx, maxx)) +

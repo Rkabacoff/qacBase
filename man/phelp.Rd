@@ -9,6 +9,9 @@ phelp(pckg)
 \arguments{
 \item{pckg}{The name of a package}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 \code{phelp} provides help on an installed package.
 }
@@ -18,6 +21,6 @@ package does not have to be loaded. The package name does
 not need to be entered with quotes.
 }
 \examples{
-# phelp(ggplot2)
+phelp(stats)
 
 }

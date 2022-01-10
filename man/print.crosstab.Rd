@@ -11,6 +11,9 @@
 
 \item{...}{not currently used.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 This function prints the results of a calculated two-way
 frequency table.

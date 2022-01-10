@@ -4,7 +4,8 @@
 #' @param x An object of class \code{crosstab}
 #' @param ... not currently used.
 #' @importFrom stats addmargins
-#' @return NULL
+#' @return
+#' No return value, called for side effects
 #' @examples
 #' mycrosstab <- crosstab(mtcars, cyl, gear, type = "freq", digits = 2)
 #' print(mycrosstab)

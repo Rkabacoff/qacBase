@@ -11,7 +11,8 @@
 #' colors with matching names are plotted.
 #'
 #' @seealso \link{colors}
-#' @return NULL
+#' @return
+#' No return value, called for side effects
 #'
 #' @importFrom grDevices col2rgb colors rgb
 #' @importFrom graphics par rect text
@@ -51,7 +52,8 @@ rcolors <- function(color=NULL, cex=.6){
   names(col) <- Colors
   colval <- t(col2rgb(col))
   ord <- hclust(dist(colval))$order
-  opar <- par(no.readonly=TRUE)
+  oldpar <- par(no.readonly=TRUE)
+  on.exit(par(oldpar))
   par(mar = rep(0.1, 4))
   x <- (1:columns) - 1
   y <- (1:rows) - 1
@@ -68,6 +70,5 @@ rcolors <- function(color=NULL, cex=.6){
     text(x[i] + dx * 1.2, y[i], names(col)[ord[i]], cex = cex,
          adj = c(0, 0.5))
   }
-  par(opar)
   return(invisible(NULL))
 }

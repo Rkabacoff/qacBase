@@ -12,7 +12,8 @@ univariate_plot(
   pointcolor = "black",
   density = TRUE,
   densitycolor = "grey",
-  alpha = 0.2
+  alpha = 0.2,
+  seed = 1234
 )
 }
 \arguments{
@@ -33,6 +34,8 @@ the histogram. (default=TRUE)}
 
 \item{alpha}{Alpha transparency (0-1) for the density curve and
 jittered points.}
+
+\item{seed}{pseudorandom number seed for jittered plot.}
 }
 \value{
 a ggplot2 graph

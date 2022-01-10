@@ -10,8 +10,10 @@
 #'
 #' @param pckg The name of a package
 #' @export
+#' @return 
+#' No return value, called for side effects.
 #' @examples
-#' # phelp(ggplot2)
+#' phelp(stats)
 #'
 phelp <- function(pckg) {
   utils::help(package=deparse(substitute(pckg)))

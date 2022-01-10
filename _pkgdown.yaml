@@ -25,7 +25,6 @@ reference:
   - title: Utilities
     desc: ~
     contents:
-      - '`clear`'
       - '`lso`'
       - '`phelp`'
       - '`print.contents`'

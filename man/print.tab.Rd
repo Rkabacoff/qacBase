@@ -11,12 +11,13 @@
 
 \item{...}{Parameters passed to the print function}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Print the results of calculating a frequency table
 }
 \examples{
-\dontrun{
 frequency <- tab(cardata, make, sort = TRUE, na.rm = FALSE)
 print(frequency)
-}
 }

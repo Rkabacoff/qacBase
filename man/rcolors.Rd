@@ -11,6 +11,9 @@ rcolors(color = NULL, cex = 0.6)
 
 \item{cex}{numeric. text size for color labels.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Plot a grid of R colors and their associated names
 }

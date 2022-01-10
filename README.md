@@ -14,6 +14,12 @@ The goal of the **qacBase** package is to provide **convenient statistical funct
 You can install this package with the following code:
 
 ``` r
+install.packages("qacBase")
+```
+
+To install the latest development version, use:
+
+``` r
 if(!require(remotes)){
    install.packages("remotes")
 }
