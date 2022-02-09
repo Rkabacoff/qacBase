@@ -1,4 +1,4 @@
-![ducks](ducks.png)
+![](ducks.png)
 
 # qacBase
 

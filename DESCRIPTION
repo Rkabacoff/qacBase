@@ -1,6 +1,6 @@
 Package: qacBase
 Title: Functions to Facilitate Exploratory Data Analysis
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: 
     c(person(given = "Kabacoff",
            family = "Robert",
