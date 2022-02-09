@@ -50,7 +50,7 @@ qstats <- function(data, x, ...,
   my_sum <- function(data, col, cus_sum) {
     col <- enquo(col)
     cus_sum_name <- cus_sum
-    cus_sum <- rlang::as_function(cus_sum)
+    cus_sum <- rlang::as_function(cus_sum, env = current_env())
 
     data %>%
       summarise(!!cus_sum_name := cus_sum(!!col))
