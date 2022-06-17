@@ -55,7 +55,7 @@
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-book"></span>
      
     Vignettes
@@ -124,11 +124,22 @@
 
     
     
-<p>The purpose of the <strong>qacBase</strong> package is to provide functions for descriptive statistics, data management, and data visualization. As a part of this package, the <strong>contents</strong> function produces a series of informational tables that allow for users to have a comprehensive understanding of their dataset of choice as well as the each of the quantitative and categorical variables featured in their dataset. Graphical functions, such as <strong>barcharts</strong>, <strong>histograms</strong>, and <strong>densities</strong> provide succinct visualizations of the variables in a data frame.</p>
+<p>The purpose of the <strong>qacBase</strong> package is to provide
+functions for descriptive statistics, data management, and data
+visualization. As a part of this package, the <strong>contents</strong>
+function produces a series of informational tables that allow for users
+to have a comprehensive understanding of their dataset of choice as well
+as the each of the quantitative and categorical variables featured in
+their dataset. Graphical functions, such as <strong>barcharts</strong>,
+<strong>histograms</strong>, and <strong>densities</strong> provide
+succinct visualizations of the variables in a data frame.</p>
 <div class="section level2">
 <h2 id="example-dataset-motor-trend-magazine-review-of-cars">Example Dataset: Motor Trend Magazine Review of Cars<a class="anchor" aria-label="anchor" href="#example-dataset-motor-trend-magazine-review-of-cars"></a>
 </h2>
-<p>How can you quickly become familiar with the data in a data frame? We’ll use the <strong>cars74</strong> data frame as an example. This data frame contains information on the characteristics of 32 cars in 1974.</p>
+<p>How can you quickly become familiar with the data in a data frame?
+We’ll use the <strong>cars74</strong> data frame as an example. This
+data frame contains information on the characteristics of 32 cars in
+1974.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
 <div class="section level3">
@@ -192,16 +203,36 @@
 <span class="co">#&gt;           carb4              10 0.31</span>
 <span class="co">#&gt;           carb6               1 0.03</span>
 <span class="co">#&gt;           carb8               1 0.03</span></code></pre></div>
-<p>As shown above, the <code>contents</code> function produced three tables, one that provides an overall summary of the data and two tables that break down the quantitative and categorical variables of the dataset respectively.</p>
-<p>The <strong>overall table</strong> describes each of the variables in the data frame, listing their column position, variable name, the variable type, number of unique values, the number of missing values, and the corresponding percentage of missing values.</p>
-<p>The <strong>quantitative table</strong> provides information for each of the quantitative variables in the data frame, listing the variable name, the number of non-missing values, and a series of summary statistics including the mean, standard deviation, skewness, minimum, 25%tile, median, 75%tile, and maximum.</p>
-<p>The <strong>categorical table</strong> provides information for each of the categorical variables in the data frame, listing the variable name, the specific levels of each variable, and the number of observations for each level, and percentage distribution of each variable level. By default, up to 10 levels of a categorical variable are displayed (but you can increase this by adding the option maxcat = #, where # is the number of levels to display).</p>
-<p>If the dataset only contains quantitative or categorical, then only the overall summary table and the relevant variable table would be printed.</p>
+<p>As shown above, the <code>contents</code> function produced three
+tables, one that provides an overall summary of the data and two tables
+that break down the quantitative and categorical variables of the
+dataset respectively.</p>
+<p>The <strong>overall table</strong> describes each of the variables in
+the data frame, listing their column position, variable name, the
+variable type, number of unique values, the number of missing values,
+and the corresponding percentage of missing values.</p>
+<p>The <strong>quantitative table</strong> provides information for each
+of the quantitative variables in the data frame, listing the variable
+name, the number of non-missing values, and a series of summary
+statistics including the mean, standard deviation, skewness, minimum,
+25%tile, median, 75%tile, and maximum.</p>
+<p>The <strong>categorical table</strong> provides information for each
+of the categorical variables in the data frame, listing the variable
+name, the specific levels of each variable, and the number of
+observations for each level, and percentage distribution of each
+variable level. By default, up to 10 levels of a categorical variable
+are displayed (but you can increase this by adding the option maxcat =
+#, where # is the number of levels to display).</p>
+<p>If the dataset only contains quantitative or categorical, then only
+the overall summary table and the relevant variable table would be
+printed.</p>
 </div>
 <div class="section level3">
 <h3 id="visualizing-the-data-frame">Visualizing the data frame<a class="anchor" aria-label="anchor" href="#visualizing-the-data-frame"></a>
 </h3>
-<p>The <code>df_plot</code> function provides a single graph displaying the variables, their types, and the percent of values present (or missing).</p>
+<p>The <code>df_plot</code> function provides a single graph displaying
+the variables, their types, and the percent of values present (or
+missing).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/df_plot.html">df_plot</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
 <p><img src="contents_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
@@ -209,7 +240,8 @@
 <div class="section level3">
 <h3 id="visualizing-the-categorical-variables">Visualizing the categorical variables<a class="anchor" aria-label="anchor" href="#visualizing-the-categorical-variables"></a>
 </h3>
-<p>The <code>barcharts</code> function plots the distribution of each of the categorical variables in the data frame.</p>
+<p>The <code>barcharts</code> function plots the distribution of each of
+the categorical variables in the data frame.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/barcharts.html">barcharts</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span>
 <span class="co">#&gt; The following variable had more than 20 levels and were not graphed:</span>
@@ -219,7 +251,9 @@
 <div class="section level3">
 <h3 id="visualizing-the-quantitative-variables">Visualizing the quantitative variables<a class="anchor" aria-label="anchor" href="#visualizing-the-quantitative-variables"></a>
 </h3>
-<p>The <code>histograms</code> and <code>densities</code> functions plot the distribution of each of the quantitative variables in the data frame.</p>
+<p>The <code>histograms</code> and <code>densities</code> functions plot
+the distribution of each of the quantitative variables in the data
+frame.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/histograms.html">histograms</a></span><span class="op">(</span><span class="va">cars74</span><span class="op">)</span></code></pre></div>
 <p><img src="contents_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
@@ -248,7 +282,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

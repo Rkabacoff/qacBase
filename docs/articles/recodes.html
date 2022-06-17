@@ -55,7 +55,7 @@
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-book"></span>
      
     Vignettes
@@ -125,12 +125,14 @@
 
     
     
-<p>The <code><a href="../reference/recodes.html">recodes()</a></code> functions makes it very easy to recode one or more variables in the your data frame. The format is </p>
+<p>The <code><a href="../reference/recodes.html">recodes()</a></code> functions makes it very easy to recode one
+or more variables in the your data frame. The format is </p>
 <p><strong><code>newdata &lt;- recodes(olddata, variables, from values, to values)</code></strong></p>
 <div class="section level3">
 <h3 id="original-dataset">Original dataset<a class="anchor" aria-label="anchor" href="#original-dataset"></a>
 </h3>
-<p>Consider the following data set (below). Lets make the following changes.</p>
+<p>Consider the following data set (below). Lets make the following
+changes.</p>
 <table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:right;">
@@ -820,7 +822,8 @@ Other
 <div class="section level4">
 <h4 id="q1-and-q2">Q1 and Q2<a class="anchor" aria-label="anchor" href="#q1-and-q2"></a>
 </h4>
-<p>For <code>Q1</code> and <code>Q2</code> set values of 86 and 99 to missing.</p>
+<p>For <code>Q1</code> and <code>Q2</code> set values of 86 and 99 to
+missing.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Q1"</span>, <span class="st">"Q2"</span><span class="op">)</span>, 
               from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">86</span>, <span class="fl">99</span><span class="op">)</span>, to<span class="op">=</span><span class="cn">NA</span><span class="op">)</span>
@@ -1003,7 +1006,12 @@ NA
 </li>
 <li>50 &lt; age &lt;= 90 to “Older”.</li>
 </ul>
-<p>You can use expressions in your <code>from</code> fields. When they are <code>TRUE</code>, the corresponding <code>to</code> values will be applied. We will use the dollar sign (<strong>$</strong>) to represent the variable (age in this case). The symbols ( <strong>|</strong>, <strong>&amp;</strong> ) mean <strong>OR</strong> and <strong>AND</strong> respectively.</p>
+<p>You can use expressions in your <code>from</code> fields. When they
+are <code>TRUE</code>, the corresponding <code>to</code> values will be
+applied. We will use the dollar sign (<strong>$</strong>) to represent
+the variable (age in this case). The symbols ( <strong>|</strong>,
+<strong>&amp;</strong> ) mean <strong>OR</strong> and
+<strong>AND</strong> respectively.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"age"</span>, 
               from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"$ &lt;   20 | $ &gt;  90"</span>, 
@@ -1016,7 +1024,10 @@ NA
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"age"</span>, 
               from<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"$ &lt; 20"</span>, <span class="st">"$ &lt;= 30"</span>, <span class="st">"$ &lt;= 50"</span>, <span class="st">"$ &lt;= 90"</span>, <span class="st">"$ &gt; 90"</span><span class="op">)</span>, 
               to<span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Younger"</span>, <span class="st">"Middle Aged"</span>, <span class="st">"Older"</span>, <span class="st">"NA"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>This works because once the age value for an observations meets a criteria that is <code>TRUE</code> (working left to right), it is recoded. It isn’t changed again by later criteria in the same <code>recodes</code> statement.</p>
+<p>This works because once the age value for an observations meets a
+criteria that is <code>TRUE</code> (working left to right), it is
+recoded. It isn’t changed again by later criteria in the same
+<code>recodes</code> statement.</p>
 <table class="table table table-striped" style="width: auto !important; ">
 <thead><tr>
 <th style="text-align:left;">
@@ -1186,7 +1197,8 @@ NA
 <div class="section level4">
 <h4 id="rating">rating<a class="anchor" aria-label="anchor" href="#rating"></a>
 </h4>
-<p>Finally, for the <code>rating</code> variable, reverse the scoring so that 1 to 5 becomes 5 to 1.</p>
+<p>Finally, for the <code>rating</code> variable, reverse the scoring so
+that 1 to 5 becomes 5 to 1.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recodes.html">recodes</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, vars<span class="op">=</span><span class="st">"rating"</span>, from<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, to<span class="op">=</span><span class="fl">5</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
 <table class="table table table-striped" style="width: auto !important; ">
@@ -1359,13 +1371,18 @@ NA
 <div class="section level3">
 <h3 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a>
 </h3>
-<p>Remember that <code>recodes</code> returns a data frame, not a variable.</p>
+<p>Remember that <code>recodes</code> returns a data frame, not a
+variable.</p>
 <ul>
-<li><p><code>df &lt;- recodes(data=df, vars="rating", from=1:5, to=5:1)</code> <strong>is correct</strong>.</p></li>
-<li><p><code>df$rating &lt;- recodes(data=df, vars="rating", from=1:5, to=5:1)</code> <strong>is not</strong>.</p></li>
+<li><p><code>df &lt;- recodes(data=df, vars="rating", from=1:5, to=5:1)</code>
+<strong>is correct</strong>.</p></li>
+<li><p><code>df$rating &lt;- recodes(data=df, vars="rating", from=1:5, to=5:1)</code>
+<strong>is not</strong>.</p></li>
 </ul>
-<p>This allows you to apply the same recoding scheme to more than one variable at a time (e.g., Q1 and Q2 above).</p>
-<p><strong><span style="color: red;">And that’s it (APPLAUSE, APPLAUSE)!</span></strong></p>
+<p>This allows you to apply the same recoding scheme to more than one
+variable at a time (e.g., Q1 and Q2 above).</p>
+<p><strong><span style="color: red;">And that’s it (APPLAUSE,
+APPLAUSE)!</span></strong></p>
 </div>
   </div>
 
@@ -1384,7 +1401,7 @@ NA
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

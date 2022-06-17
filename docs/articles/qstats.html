@@ -55,7 +55,7 @@
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-book"></span>
      
     Vignettes
@@ -127,8 +127,13 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>Getting summary statistics for a quantitative variable is a very common task in data analysis. Unfortunately, <strong>R</strong> makes it surprisingly difficult.</p>
-<p>The <code>qstats</code> function is an attempt to rectify the situation by making it simple to get any number of descriptive statistics for a numeric variable and to break these statistics down by the levels of one or more categorical variables (groups).</p>
+<p>Getting summary statistics for a quantitative variable is a very
+common task in data analysis. Unfortunately, <strong>R</strong> makes it
+surprisingly difficult.</p>
+<p>The <code>qstats</code> function is an attempt to rectify the
+situation by making it simple to get any number of descriptive
+statistics for a numeric variable and to break these statistics down by
+the levels of one or more categorical variables (groups).</p>
 <p>The general format is</p>
 <p><strong><code>qstats(data, variable, grouping variables, statistics, other options)</code></strong></p>
 <p>Note that variable names do not have to be quoted.</p>
@@ -136,7 +141,9 @@
 <div class="section level2">
 <h2 id="using-default-statistics">Using default statistics<a class="anchor" aria-label="anchor" href="#using-default-statistics"></a>
 </h2>
-<p>By default the <em>sample size</em>, <em>mean</em>, and <em>standard deviation</em> are provided. Let’s take a look at fuel efficiencies for 11,914 automobiles in the <code>cardata</code> data frame.</p>
+<p>By default the <em>sample size</em>, <em>mean</em>, and <em>standard
+deviation</em> are provided. Let’s take a look at fuel efficiencies for
+11,914 automobiles in the <code>cardata</code> data frame.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># simple summary statistics </span>
 <span class="fu"><a href="../reference/qstats.html">qstats</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">highway_mpg</span><span class="op">)</span>
@@ -169,7 +176,9 @@
 <div class="section level2">
 <h2 id="specifying-other-statistics">Specifying other statistics<a class="anchor" aria-label="anchor" href="#specifying-other-statistics"></a>
 </h2>
-<p>You can supply a statistics argument with the “stats” parameter. You can pass a single statistic, or multiple statistics as a vector of names.</p>
+<p>You can supply a statistics argument with the “stats” parameter. You
+can pass a single statistic, or multiple statistics as a vector of
+names.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># single statistic</span>
 <span class="fu"><a href="../reference/qstats.html">qstats</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">highway_mpg</span>, <span class="va">vehicle_size</span>, stats <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span>
@@ -185,7 +194,8 @@
 <span class="co">#&gt; 1      Compact     28  12 111</span>
 <span class="co">#&gt; 2        Large     22  13 107</span>
 <span class="co">#&gt; 3      Midsize     26  12 354</span></code></pre></div>
-<p>User-defined functions can also be used as a statistics. The only requirement is that the function returns a single number.</p>
+<p>User-defined functions can also be used as a statistics. The only
+requirement is that the function returns a single number.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#custom statistics</span>
 <span class="va">p25</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">x</span>, probs<span class="op">=</span><span class="fl">.25</span><span class="op">)</span>
@@ -205,10 +215,12 @@
 <p>Other options include</p>
 <ul>
 <li>
-<strong>na.rm</strong> When TRUE, NAs are removed. Default is TRUE.<br>
+<strong>na.rm</strong> When TRUE, NAs are removed. Default is
+TRUE.<br>
 </li>
 <li>
-<strong>digits</strong> The number of decimal points to print. Default = 2.</li>
+<strong>digits</strong> The number of decimal points to print.
+Default = 2.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/qstats.html">qstats</a></span><span class="op">(</span><span class="va">cardata</span>, <span class="va">highway_mpg</span>, <span class="va">vehicle_size</span>,  
@@ -238,7 +250,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

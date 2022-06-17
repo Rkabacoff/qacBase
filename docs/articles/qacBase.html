@@ -55,7 +55,7 @@
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-book"></span>
      
     Vignettes
@@ -128,7 +128,9 @@
 <div>
 <p><img src="duckhead.jpg"></p>
 </div>
-<p>The <strong>qacBase</strong> package contains functions and data sets designed to simplify data analyses and aid in the instruction of data science courses. The primary functions are described below.</p>
+<p>The <strong>qacBase</strong> package contains functions and data sets
+designed to simplify data analyses and aid in the instruction of data
+science courses. The primary functions are described below.</p>
 <div class="section level2">
 <h2 id="preparing-data">Preparing Data<a class="anchor" aria-label="anchor" href="#preparing-data"></a>
 </h2>
@@ -147,7 +149,8 @@ Description
 <a href="../reference/recodes.html"><strong>recodes</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/recodes.html">recodes()</a></code> provides a simple way to recode the values of numeric, character, or factor variables. See the <a href="recodes.html">vignette</a> for examples.
+<code><a href="../reference/recodes.html">recodes()</a></code> provides a simple way to recode the values of
+numeric, character, or factor variables. See the <a href="recodes.html">vignette</a> for examples.
 </td>
 </tr>
 <tr>
@@ -155,7 +158,9 @@ Description
 <a href="../reference/standardize.html"><strong>standardize</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/standardize.html">standardize()</a></code> transforms all the numeric variables in a data frame to same mean and standard deviation (mean=0 sd=1, by default), without modifying character, factor, or dummy coded variables.
+<code><a href="../reference/standardize.html">standardize()</a></code> transforms all the numeric variables in a
+data frame to same mean and standard deviation (mean=0 sd=1, by
+default), without modifying character, factor, or dummy coded variables.
 </td>
 </tr>
 <tr>
@@ -163,7 +168,9 @@ Description
 <a href="../reference/normalize.html"><strong>normalize</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/normalize.html">normalize()</a></code> transforms all the numeric variables in a data frame to same range of values ([0, 1] by default). Again, character and factor variables are left unchanged.
+<code><a href="../reference/normalize.html">normalize()</a></code> transforms all the numeric variables in a data
+frame to same range of values ([0, 1] by default). Again, character and
+factor variables are left unchanged.
 </td>
 </tr>
 </tbody>
@@ -187,7 +194,11 @@ Description
 <a href="../reference/contents.html"><strong>contents</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/contents.html">contents()</a></code> provides a comprehensive description of a data frame. The output is <strong>much</strong> more detailed than that provided by the base <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary.data.frame()</a></code> function, and is easier to read and understand. This function should be your first stop when looking at a new dataset.
+<code><a href="../reference/contents.html">contents()</a></code> provides a comprehensive description of a data
+frame. The output is <strong>much</strong> more detailed than that
+provided by the base <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary.data.frame()</a></code> function, and is
+easier to read and understand. This function should be your first stop
+when looking at a new dataset.
 </td>
 </tr>
 <tr>
@@ -195,7 +206,10 @@ Description
 <a href="../reference/df_plot.html"><strong>df_plot</strong></a>
 </td>
 <td style="text-align:left;">
-<code>dfPlot()</code> helps you visual a data frame. Variable are grouped by type (numeric, integer, character, factor, date) and color coded. The percent of missing data for each variable is also displayed, along with the total number of variables and cases.
+<code>dfPlot()</code> helps you visual a data frame. Variable are
+grouped by type (numeric, integer, character, factor, date) and color
+coded. The percent of missing data for each variable is also displayed,
+along with the total number of variables and cases.
 </td>
 </tr>
 <tr>
@@ -203,7 +217,8 @@ Description
 <a href="../reference/barcharts.html"><strong>barcharts</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/barcharts.html">barcharts()</a></code> provides bar charts of all the character or factor variables in a data frame, within a single graph.
+<code><a href="../reference/barcharts.html">barcharts()</a></code> provides bar charts of all the character or
+factor variables in a data frame, within a single graph.
 </td>
 </tr>
 <tr>
@@ -211,7 +226,8 @@ Description
 <a href="../reference/histograms.html"><strong>histograms</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/histograms.html">histograms()</a></code> provides histograms of the all quantitative variables in a data frame, within a single graph.
+<code><a href="../reference/histograms.html">histograms()</a></code> provides histograms of the all quantitative
+variables in a data frame, within a single graph.
 </td>
 </tr>
 <tr>
@@ -219,7 +235,8 @@ Description
 <a href="../reference/densities.html"><strong>densities</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/densities.html">densities()</a></code> provides density charts of all the quantitative variables in a data frame, within a single graph.
+<code><a href="../reference/densities.html">densities()</a></code> provides density charts of all the quantitative
+variables in a data frame, within a single graph.
 </td>
 </tr>
 </tbody>
@@ -246,7 +263,11 @@ Description
 <a href="../reference/qstats.html"><strong>qstats</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/qstats.html">qstats()</a></code> allows you to easily calculate any number of descriptive statistics (e.g., n, mean, sd) for a quantiatative variable. The results can be broken down by the levels of one of more categorical variables (groups). Any function that produces a single number can be used. See the <a href="qstats.html">vignette</a> for examples.
+<code><a href="../reference/qstats.html">qstats()</a></code> allows you to easily calculate any number of
+descriptive statistics (e.g., n, mean, sd) for a quantiatative variable.
+The results can be broken down by the levels of one of more categorical
+variables (groups). Any function that produces a single number can be
+used. See the <a href="qstats.html">vignette</a> for examples.
 </td>
 </tr>
 <tr>
@@ -254,7 +275,12 @@ Description
 <a href="../reference/univariate_plot.html"><strong>univariate_plot</strong></a>
 </td>
 <td style="text-align:left;">
-<code>univariatePlot()</code> provides a detailed visualization of the distribution of values in a quantiative variable. The graph contains a histrogram, jittered dot plot, density curve, and boxplot, Annotations provide statistics such as <em>n</em>, <em>mean</em>, <em>sd</em>, <em>median</em>, <em>min</em>, <em>max</em>, <em>skew</em>, and <em>outliers</em>.
+<code>univariatePlot()</code> provides a detailed visualization of the
+distribution of values in a quantiative variable. The graph contains a
+histrogram, jittered dot plot, density curve, and boxplot, Annotations
+provide statistics such as <em>n</em>, <em>mean</em>, <em>sd</em>,
+<em>median</em>, <em>min</em>, <em>max</em>, <em>skew</em>, and
+<em>outliers</em>.
 </td>
 </tr>
 <tr>
@@ -262,7 +288,13 @@ Description
 <a href="../reference/scatter.html"><strong>scatter</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/scatter.html">scatter()</a></code> generates a scatter plot and line of best fit with 95% confidence interval displaying the relationship between two quantiative variables. Annotations include the slope, correlation coefficient (r), r-squared, and p_value. Oultiers (determinded by studentized residuals) are flagged. Optionally, marginal distributions (histograms, boxplots, density curves, violin plots) can be added to the margins of the plot.
+<code><a href="../reference/scatter.html">scatter()</a></code> generates a scatter plot and line of best fit
+with 95% confidence interval displaying the relationship between two
+quantiative variables. Annotations include the slope, correlation
+coefficient (r), r-squared, and p_value. Oultiers (determinded by
+studentized residuals) are flagged. Optionally, marginal distributions
+(histograms, boxplots, density curves, violin plots) can be added to the
+margins of the plot.
 </td>
 </tr>
 <tr>
@@ -270,7 +302,9 @@ Description
 <a href="../reference/cor_plot.html"><strong>cor_plot</strong></a>
 </td>
 <td style="text-align:left;">
-<code>corplot()</code> plots the correlations among numeric variables in a data frame. Variables can be sorted to place variables with similar correlation patterns together.
+<code>corplot()</code> plots the correlations among numeric variables in
+a data frame. Variables can be sorted to place variables with similar
+correlation patterns together.
 </td>
 </tr>
 <tr>
@@ -278,7 +312,10 @@ Description
 <a href="../reference/groupdiff.html"><strong>groupdiff</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/groupdiff.html">groupdiff()</a></code> compares groups on a quantitative outcome using either a parametric (ANOVA) or nonparametric (Kruskal-Wallis) test. Summary statistics, pair-wise group differences (post-hoc comparisons), and plots are provided.
+<code><a href="../reference/groupdiff.html">groupdiff()</a></code> compares groups on a quantitative outcome using
+either a parametric (ANOVA) or nonparametric (Kruskal-Wallis) test.
+Summary statistics, pair-wise group differences (post-hoc comparisons),
+and plots are provided.
 </td>
 </tr>
 </tbody>
@@ -302,7 +339,10 @@ Description
 <a href="../reference/tab.html"><strong>tab</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/tab.html">tab()</a></code> generates a frequency table and bar chart for a categorical variable. There are many options including sorting categories by frequency, adding cumulative frequencies and percents, and combining infrequent categories into an ‘Other’ category. See the <a href="tab.html">vignette</a> for examples.
+<code><a href="../reference/tab.html">tab()</a></code> generates a frequency table and bar chart for a
+categorical variable. There are many options including sorting
+categories by frequency, adding cumulative frequencies and percents, and
+combining infrequent categories into an ‘Other’ category. See the <a href="tab.html">vignette</a> for examples.
 </td>
 </tr>
 <tr>
@@ -310,7 +350,10 @@ Description
 <a href="../reference/crosstab.html"><strong>crosstab</strong></a>
 </td>
 <td style="text-align:left;">
-<code><a href="../reference/crosstab.html">crosstab()</a></code> generates a two-way frequency table from two categorical variables. There are many options including cell, row, and column percents, plotting options, and a chi-square test of independence. See the <a href="crosstab.html">vignette</a> for examples.
+<code><a href="../reference/crosstab.html">crosstab()</a></code> generates a two-way frequency table from two
+categorical variables. There are many options including cell, row, and
+column percents, plotting options, and a chi-square test of
+independence. See the <a href="crosstab.html">vignette</a> for examples.
 </td>
 </tr>
 </tbody>
@@ -336,7 +379,7 @@ Description
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

@@ -15,6 +15,7 @@ reference:
       - '`df_plot`'
       - '`groupdiff`'
       - '`histograms`'
+      - '`mean_plot`'
       - '`normalize`'
       - '`recodes`'
       - '`scatter`'
