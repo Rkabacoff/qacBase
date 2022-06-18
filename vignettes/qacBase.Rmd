@@ -99,29 +99,31 @@ kbl(d) %>% kable_styling(bootstrap_options = "striped", full_width = F, position
 ### Numeric variables
 
 ```{r, echo=FALSE}
-d <- data.frame(Function=c(
-  "[**qstats**](../reference/qstats.html)",
-  "[**univariate_plot**](../reference/univariate_plot.html)",
-  "[**scatter**](../reference/scatter.html)",
-  "[**cor_plot**](../reference/cor_plot.html)",
-  "[**groupdiff**](../reference/groupdiff.html)"),
-                
-   Description=c("`qstats()` allows you to easily calculate any number
+d <- data.frame(
+  Function=c(
+    "[**qstats**](../reference/qstats.html)",
+    "[**univariate_plot**](../reference/univariate_plot.html)",
+    "[**scatter**](../reference/scatter.html)",
+    "[**cor_plot**](../reference/cor_plot.html)",
+    "[**groupdiff**](../reference/groupdiff.html)",
+    "[**mean_plot**](../reference/mean_plot.html)"),
+  Description=c(
+    "`qstats()` allows you to easily calculate any number
                  of descriptive statistics (e.g., n, mean, sd) for a
                  quantiatative variable. The results can be broken down by the
                  levels of one of more categorical variables
                  (groups). Any function that produces a single number can
                   be used. See the [vignette](qstats.html) for examples.",
-                  
-                   "`univariatePlot()` provides a detailed
+    
+    "`univariatePlot()` provides a detailed
                    visualization of the distribution of values in 
                    a quantiative variable. The graph contains a
                    histrogram, jittered dot plot, density curve,
                    and boxplot, Annotations provide statistics
                    such as *n*, *mean*, *sd*, *median*, *min*,
                               *max*, *skew*, and *outliers*.",
-                              
-                   "`scatter()` generates a scatter plot and line
+    
+    "`scatter()` generates a scatter plot and line
                    of best fit with 95% confidence interval
                    displaying the relationship between two
                    quantiative variables. Annotations include
@@ -131,17 +133,22 @@ d <- data.frame(Function=c(
                    flagged. Optionally, marginal distributions
                    (histograms, boxplots, density curves, 
                     violin plots) can be added to the margins of the plot.",
-                    
-                    "`corplot()` plots the correlations among
+    
+    "`corplot()` plots the correlations among
                  numeric variables in a data frame. Variables
                  can be sorted to place variables with similar correlation
                  patterns together.",
-                 "`groupdiff()` compares groups on a quantitative
+    "`groupdiff()` compares groups on a quantitative
                  outcome using either a parametric (ANOVA) or nonparametric
                  (Kruskal-Wallis) test. Summary statistics, pair-wise
                  group differences (post-hoc comparisons), and plots are
-                 provided."
-                              ))
+                 provided.",
+    "`mean_plot()` plots means and error bars for each level of a categorical
+                 variable. Interaction with a  second categorical variable 
+                 can also be added. Error ranges can represent standard deviations, 
+                 standard errors, or confidence intervals. Each can be based on 
+                 standard or robust statistics."
+  ))
 
 kbl(d) %>% kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
 

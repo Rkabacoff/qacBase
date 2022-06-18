@@ -31,7 +31,7 @@
 #' @export
 #' @details
 #' Robust statistics are based on deciles, the nine values that divide the response variable into 
-#' 10 equal groups (where group containing roughly the same fraction of cases). The robust 
+#' 10 equal groups (where each group contains roughly the same fraction of cases). The robust 
 #' mean is the mean of these nine decile values. The robust standard deviation is the sample 
 #' standard deviation of the nine decile values. The standard error and confidence interval are 
 #' calculated in the normal way, but use the robust mean and standard deviation in 
