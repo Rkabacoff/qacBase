@@ -2,7 +2,7 @@
 #' Mean plot with error bars
 #'
 #' @description
-#' Plot group means with error bars. Error bars can represent standard deviations,
+#' Plots group means with error bars. Error bars can be standard deviations,
 #' standard errors, or confidence intervals. Optionally, plots can be based on
 #' robust statistics.
 #'
@@ -14,51 +14,52 @@
 #' @param dodge numeric. If a \code{by} variable is included, points and error bars are
 #' dodged by this amount in order to avoid overlap (default = 0.2).
 #' @param lines logical. If \code{TRUE}, group means are connected.
-#' @param width numeric. Width of the horizontal top and bottom of error bars (default = 0.2). 
+#' @param width numeric. Width of the error bars (default = 0.2). 
 #' Set to 0 to produce pointranges instead of error bars.
-#' @param error character. Each error bar represents either the standard deviation
-#'  \code{(sd)}, standard error of the mean  \code{(se)}, or confidence interval
-#'  \code{(ci)}.
-#' @param ci numeric. if \code{error = "ci"}, this indicates the size of the confidence
+#' @param error_type character. Error bars represents either standard deviations
+#'  \code{(sd)}, standard errors of the means  \code{(se)}, or confidence intervals
+#'  \code{(ci)}. The default is the standard error.
+#' @param percent numeric. if \code{error_type = "ci"}, this indicates the size of the confidence
 #' interval. The default is \code{0.95} or a 95 percent confidence interval for the mean.
 #' @param robust logical. If \code{TRUE}, the means, standard deviations, standard errors,
 #' and confidence intervals are based on robust statistics. See \code{Details}. 
-#' Default is \code{FALSE}.
+#' The default is \code{FALSE}.
 #' @import dplyr
 #' @import ggplot2
 #' @importFrom stats qt quantile
 #' @return a \code{ggplot2} graph.
 #' @export
 #' @details
-#' Robust statistics are based on deciles. The mean is estimated as the average of
-#' the nine decile values dividing the numeric variable into 10 equal quantiles. The standard
-#' deviation is bases on the sample standard deviation of the nine decile values. The standard 
-#' error and confidence interval are calculated in the normal way, but use the robust
-#' mean and standard deviation. See Abu-Shawiesh et al (2022).
+#' Robust statistics are based on deciles, the nine values that divide the response variable into 
+#' 10 equal groups (where group containing roughly the same fraction of cases). The robust 
+#' mean is the mean of these nine decile values. The robust standard deviation is the sample 
+#' standard deviation of the nine decile values. The standard error and confidence interval are 
+#' calculated in the normal way, but use the robust mean and standard deviation in 
+#' their calculations. See Abu-Shawiesh et al (2022).
 #' @references 
 #' Ahmed Abu-Shawiesh, M., Sinsomboonthong, J., & Kibria, B. (2022). A modified robust
 #' confidence interval for the population mean of distributrion baed on deciles. 
 #' \emph{Statistics in Transition}, vol. \emph{23 (1)}.
 #' \href{https://tinyurl.com/bdz7umj8}{pdf}
 #' @examples
-#' data(cars74)
 #' mean_plot(cars74, mpg, cyl)
 #' mean_plot(cars74, mpg, cyl, am)
-#' mean_plot(cars74, mpg, cyl, am, error = "ci", 
+#' mean_plot(cars74, mpg, cyl, am, 
+#'           error_type = "ci", percent = 0.9,
 #'           width = 0, lines = FALSE, robust = TRUE)
 mean_plot <- function(data, y, x, by, 
                       pointsize = 2,
                       dodge = 0.2,
                       lines = TRUE,
                       width = .2,
-                      error = c("se", "sd", "ci"), 
-                      ci=.95,
+                      error_type = c("se", "sd", "ci"), 
+                      percent=.95,
                       robust = FALSE){
   x <- enquo(x)
   y <- enquo(y)
   by <- enquo(by)
-  error <- match.arg(error)
-  if (ci > 1) ci <- ci/100
+  error_type <- match.arg(error_type)
+  if (percent > 1) percent <- percent/100
   
   # calculate means and standard errors by x and optional by variable
   if (as_label(by) == "<empty>"){
@@ -74,7 +75,7 @@ mean_plot <- function(data, y, x, by,
                 mean = mean(!!y),
                 sd = sd(!!y),
                 se = sd/sqrt(n),
-                ci = qt(1 - (1-ci)/2, df = n - 1) * sd / sqrt(n),
+                ci = qt(1 - (1-percent)/2, df = n - 1) * sd / sqrt(n),
                 .groups = "drop")
   }
   else {
@@ -88,15 +89,15 @@ mean_plot <- function(data, y, x, by,
       summarize(mean = mean(deciles),
                 sd = sqrt(sum((deciles - mean)^2)/8),
                 se = sd/sqrt(n),
-                ci = qt(1 - (1-ci)/2, df = n - 1) * sd / sqrt(n),
+                ci = qt(1 - (1-percent)/2, df = n - 1) * sd / sqrt(n),
                 .groups = "drop") %>%
       unique()
   }
   
   # specify error  to use
-  if (error == "sd") plotdata$error <- plotdata$sd
-  if (error == "se") plotdata$error <- plotdata$se
-  if (error == "ci") plotdata$error <- plotdata$ci
+  if (error_type == "sd") plotdata$error <- plotdata$sd
+  if (error_type == "se") plotdata$error <- plotdata$se
+  if (error_type == "ci") plotdata$error <- plotdata$ci
   
   # plot the means and  errors bars by sex (dodged)
   pd <- position_dodge(dodge)
@@ -128,9 +129,9 @@ mean_plot <- function(data, y, x, by,
           panel.grid.major.x = element_blank())
   
   # labels
-  if (error == "sd") caption <- "Mean \u00B1 standard deviation"
-  if (error == "se") caption <- "Mean \u00B1 standard error"
-  if (error == "ci") caption <- paste0("Mean \u00B1 ", ci*100, "% confidence interval")
+  if (error_type == "sd") caption <- "Mean \u00B1 standard deviation"
+  if (error_type == "se") caption <- "Mean \u00B1 standard error"
+  if (error_type == "ci") caption <- paste0("Mean \u00B1 ", percent*100, "% confidence interval")
   if (robust == TRUE) caption <- paste(caption, "\nbased on robust statistics")
   p <- p + labs(y = as_label(y),
                 caption = caption)
