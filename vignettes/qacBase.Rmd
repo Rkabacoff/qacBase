@@ -69,7 +69,7 @@ d <- data.frame(Function=c("[**contents**](../reference/contents.html)",
                               function should be your first stop when 
                               looking at a new dataset.",
                               
-                              "`dfPlot()` helps you visual a data frame. 
+                              "`df_plot()` helps you visual a data frame. 
                               Variable are grouped by type (numeric, integer,
                               character, factor, date) and color coded. The
                               percent of missing data for each variable is
@@ -115,7 +115,7 @@ d <- data.frame(
                  (groups). Any function that produces a single number can
                   be used. See the [vignette](qstats.html) for examples.",
     
-    "`univariatePlot()` provides a detailed
+    "`univariate_plot()` provides a detailed
                    visualization of the distribution of values in 
                    a quantiative variable. The graph contains a
                    histrogram, jittered dot plot, density curve,
