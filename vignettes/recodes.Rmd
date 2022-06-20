@@ -152,4 +152,3 @@ Remember that `recodes` returns a data frame, not a variable.
 
 This allows you to apply the same recoding scheme to more than one variable at a time (e.g., Q1 and Q2 above).
 
-**<span style="color: red;">And that's it (APPLAUSE, APPLAUSE)!</span>**
